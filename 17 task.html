@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Form action="" method="get">
+        <table border="4" align="center">
+            <tr>
+                <td><lebal for="">User Name</lebal></td>
+                <td><input onblur="checkvalid(this,'usernameerror')" type="text" placeholder="Enter User name"name="username" id="username">
+                <span id="usernameerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><lebal for="">Passwsord</lebal></td>
+                <td><input onblur="checkvalid(this,'passerror')" type="Password" placeholder="Enter password" name="password" id="password">
+                <span id="passerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><lebal for="">Email</lebal></td>
+                <td><input onblur="checkvalid(this,'emailerror')" type="email" value="dj@gmail.com" name="email" id="email">
+                <span id ="emailerror"></span>
+                </td>
+            </tr>
+            <script>
+                function checkvalid(kuchbhi,spanid) {
+
+                //console.log("called ");
+                //usernameval = document.getElementById("username")
+                //console.log(usernameval);
+               // console.log(usernameval.value);
+                if (kuchbhi.value == ""){
+                 //document.getElementById("usernameerror").innerText="<b>This field is required</b>"
+                 document.getElementById(spanid).innerHTML="<b>This field is required</b>"
+                }
+                else{
+                     document.getElementById(spanid).innerHTML=""
+                }
+            }
+            </script>
+            <tr>
+                <td><lebal for="">Gender</lebal></td>
+                <td>
+                    <input  onblur="checkvalid()" type="radio" name="Gender" value="Male" id="Male" >Male
+                    <input onblur="checkvalid()" type="radio" name="Gender" value="Male" id="Female" >Female
+                </td>
+            </tr>
+            <tr>
+            <td>
+                <input type="submit" name="" value="Save" id="submit">
+            </td>
+            </tr>
+        </table>
+    </Form>
+</body>
+</html>

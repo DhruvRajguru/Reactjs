@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="slider">slider 1</div>
+    <div class="slider">slider 2 </div>
+    <div class="slider">slider 3</div>
+    <div class="slider">slider 4</div>
+    <script>
+        let SliderData = document.getElementsByClassName("slider")
+        console.log(SliderData);
+        console.log(SliderData[0].style);
+        var couner = 0 
+        function slider(){ 
+             for (let index = 0; index < SliderData.length; index++){
+                SliderData[index].style.display="none"
+             }
+             //SliderData[couner].style.display="block"
+             couner = (couner + 1) % SliderData.length;
+             console.log("slider function called",couner);
+             if (couner == SliderData.length) { // add if else condition
+                 couner ==0;
+                 couner = SliderData.length - 1;
+             }
+             //SliderData[couner].style.display="block"
+             setTimeout(slider, 3000);
+
+        }
+        slider()
+        </script>
+</body>
+</html>
